@@ -63,4 +63,12 @@ describe("generateBraceletPattern", () => {
       "'colors' must contain at least three colors"
     );
   });
+
+  it("should throw an error if the colors parameter contains duplicate colors", () => {
+    const colors = ["Red", "Yellow", "Blue", "Green", "Red"];
+    const size = 10;
+    expect(() => generateBraceletPattern(colors, size)).toThrow(
+      "'colors' must contain unique colors"
+    );
+  });
 });
